@@ -26,9 +26,9 @@ export async function criarPreferencia() {
         ],
         // ATENÇÃO AQUI: É 'back_urls' (plural)
         back_urls: {
-          success: 'http://localhost:3000/sucesso', 
-          failure: 'http://localhost:3000/erro', 
-          pending: 'http://localhost:3000/pendente',
+          success: 'https://carbonocombanana.vercel.app/sucesso', 
+          failure: 'https://carbonocombanana.vercel.app/erro', 
+          pending: 'https://carbonocombanana.vercel.app/pendente',
         },
         auto_return: 'approved',
       },
