@@ -55,8 +55,10 @@ export async function criarCheckoutAdocao(itens: ItemAdocao[]) {
       return { success: false, error: "Não foi possível gerar o link de pagamento" };
     }
   } catch (error: unknown) {
-    console.error("Erro MP:", error); // Log mais detalhado
-    const errorMessage = error instanceof Error ? error.message : "Erro ao criar preferência de pagamento";
-    return { success: false, error: errorMessage };
+    console.error("Erro MP:", error);
+    return {
+      success: false,
+      error: `Erro detalhado: ${error instanceof Error ? JSON.stringify(error, Object.getOwnPropertyNames(error)) : JSON.stringify(error)}`
+    };
   }
 }
