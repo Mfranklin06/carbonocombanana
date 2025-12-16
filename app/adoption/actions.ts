@@ -21,7 +21,7 @@ interface ItemAdocao {
 
 export async function criarCheckoutAdocao(itens: ItemAdocao[]) {
   if (!accessToken) {
-    throw new Error("Erro de configuração no servidor (Token de pagamento ausente).");
+    return { success: false, error: "Erro de configuração no servidor (Token de pagamento ausente)." };
   }
 
   // Pega a URL base do ambiente ou fallback para localhost
@@ -50,12 +50,13 @@ export async function criarCheckoutAdocao(itens: ItemAdocao[]) {
     });
 
     if (response.init_point) {
-      return response.init_point;
+      return { success: true, url: response.init_point };
     } else {
-      throw new Error("Não foi possível gerar o link de pagamento");
+      return { success: false, error: "Não foi possível gerar o link de pagamento" };
     }
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Erro MP:", error); // Log mais detalhado
-    throw new Error("Erro ao criar preferência de pagamento");
+    const errorMessage = error instanceof Error ? error.message : "Erro ao criar preferência de pagamento";
+    return { success: false, error: errorMessage };
   }
 }
