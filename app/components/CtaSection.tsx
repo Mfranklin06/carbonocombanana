@@ -1,3 +1,4 @@
+import { Link } from 'lucide-react';
 import React from 'react';
 
 export default function CtaSection() {
@@ -20,13 +21,13 @@ export default function CtaSection() {
           
           {/* Botões */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-8 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-md transition-colors shadow-sm w-full sm:w-auto">
+            <Link href='adoption/' className="px-8 py-3 bg-green-700 hover:bg-green-800 text-white font-bold rounded-md transition-colors shadow-sm w-full sm:w-auto">
               Adotar Bananeiras
-            </button>
+            </Link>
             
-            <button className="px-8 py-3 bg-transparent border border-[#8C7E6A] text-[#6B5C45] font-semibold rounded-md hover:bg-[#F0EED0] transition-colors w-full sm:w-auto">
+            <Link href='about/' className="px-8 py-3 bg-transparent border border-[#8C7E6A] text-[#6B5C45] font-semibold rounded-md hover:bg-[#F0EED0] transition-colors w-full sm:w-auto">
               Ver Detalhes
-            </button>
+            </Link>
           </div>
 
         </div>

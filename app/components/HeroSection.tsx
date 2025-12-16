@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { LogIn } from 'lucide-react';
+import { Link, LogIn } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -45,13 +45,13 @@ export default function HeroSection() {
 
         {/* Botões de Ação (CTA) */}
         <div className="flex flex-col sm:flex-row gap-4 mt-10">
-          <button className="px-8 py-3 bg-amber-400 text-green-950 font-bold rounded hover:bg-amber-300 transition-colors shadow-lg">
+          <Link href='adoption/' className="px-8 py-3 bg-amber-400 text-green-950 font-bold rounded hover:bg-amber-300 transition-colors shadow-lg">
             Adote uma Bananeira
-          </button>
+          </Link>
           
-          <button className="px-8 py-3 bg-transparent border border-white text-white font-medium rounded hover:bg-white/10 transition-colors backdrop-blur-sm">
+          <Link href='about/' className="px-8 py-3 bg-transparent border border-white text-white font-medium rounded hover:bg-white/10 transition-colors backdrop-blur-sm">
             Saiba Mais
-          </button>
+          </Link>
         </div>
       </div>
 
