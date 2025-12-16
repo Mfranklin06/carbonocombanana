@@ -59,14 +59,20 @@ export default function AdoptionPricing() {
             }
 
             try {
+                console.log("Iniciando checkout com itens:", itens);
                 // Chama a Server Action
                 const url = await criarCheckoutAdocao(itens);
+                console.log("URL de checkout recebida:", url);
+
                 if (url) {
                     window.location.href = url; // Redireciona para o Mercado Pago
+                } else {
+                    console.error("Nenhuma URL retornada pela action.");
+                    alert("Erro: Nenhuma URL de pagamento foi gerada.");
                 }
             } catch (error) {
                 console.error("Erro no checkout:", error);
-                alert("Ocorreu um erro ao processar. Tente novamente.");
+                alert(`Ocorreu um erro ao processar: ${error instanceof Error ? error.message : "Erro desconhecido"}`);
             }
         });
     };
