@@ -38,9 +38,7 @@ export default function Footer() {
             </div>
 
             {/* Botão Amarelo */}
-            <button className="bg-[#FBC02D] hover:bg-[#e0ac26] text-green-950 font-bold py-3 px-8 rounded shadow-sm transition-colors mt-2">
-              Adote uma Bananeira
-            </button>
+            
           </div>
 
           {/* Coluna 2: Links Rápidos (Ocupa 3 colunas) */}

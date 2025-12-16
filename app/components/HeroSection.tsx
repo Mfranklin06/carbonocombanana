@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { Link, LogIn } from 'lucide-react';
+import { LogIn } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
